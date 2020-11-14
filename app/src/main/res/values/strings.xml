@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Milan</string>
+    <string name="connexion_title"> Connexion </string>
+    <string name="login"> Login </string>
+    <string name="password"> Mot de passe </string>
+    <string name="connexion_button_underline"> <u> Se connecter </u></string>
+    <string name="inscription_button_underline"><u>S\'inscrire </u> </string>
+    <string name="connexion_button">Se connecter</string>
+    <string name="inscription_button">S\'inscrire</string>
+    <string name="ou"> OU </string>
+    <string name="inscription_title"> Pas encore inscrit </string>
+</resources>
