@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inscription_navigation"
+    app:startDestination="@+id/nav_nomutilisateur">
+
+    <fragment
+        android:id="@+id/nav_nomutilisateur"
+        android:name="com.example.milan.inscription.NomUtilisateurFragment"
+        android:label="@string/nom_utilisateur"
+        tools:layout="@layout/fragment_inscription_nomutilisateur" >
+        <action
+            android:id="@+id/action_nav_nomutilisateur_to_nav_mail"
+            app:destination="@id/nav_mail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_mail"
+        android:name="com.example.milan.inscription.MailFragment"
+        android:label="@string/mail"
+        tools:layout="@layout/fragment_inscription_mail" >
+        <action
+            android:id="@+id/action_nav_mail_to_nav_tel"
+            app:destination="@id/nav_tel" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_tel"
+        android:name="com.example.milan.inscription.TelephoneFragment"
+        android:label="@string/tel"
+        tools:layout="@layout/fragment_inscription_telephone" >
+        <action
+            android:id="@+id/action_nav_tel_to_nav_mdp"
+            app:destination="@id/nav_mdp" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_mdp"
+        android:name="com.example.milan.inscription.MotDePasseFragment"
+        android:label="@string/menu_messages"
+        tools:layout="@layout/fragment_inscription_mot_de_passe" />
+
+</navigation>

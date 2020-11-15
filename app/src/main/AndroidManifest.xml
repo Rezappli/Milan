@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Milan.NoActionBar">
+        <activity android:name=".inscription.InscriptionActivity"></activity>
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/Theme.Milan.NoActionBar"></activity>
-
-        <activity android:name=".inscription.MotDePasseActivity" />
-        <activity android:name=".inscription.TelephoneActivity" />
-        <activity android:name=".inscription.MailActivity" />
-        <activity android:name=".inscription.NomUtilisateurActivity" />
+            android:theme="@style/Theme.Milan.NoActionBar" />
+        <activity android:name=".inscription.MotDePasseFragment" />
+        <activity android:name=".inscription.TelephoneFragment" />
+        <activity android:name=".inscription.MailFragment" />
+        <activity android:name=".inscription.NomUtilisateurFragment" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

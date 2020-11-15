@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".inscription.MailActivity">
+    tools:context=".inscription.NomUtilisateurFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="40dp"
                 android:gravity="center"
-                android:text="@string/ajout_mail"
+                android:text="@string/ajout_nomutilisateur"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -49,16 +49,16 @@
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/custom_input"
-                android:drawableEnd="@drawable/custom_icon_mail"
+                android:drawableEnd="@drawable/custom_icon_person"
                 android:ems="10"
-                android:hint="@string/mail"
-                android:inputType="textEmailAddress"
+                android:hint="@string/nom_utilisateur"
+                android:inputType="text"
                 android:padding="15dp"
                 android:textColor="#FFFFFF"
                 android:textColorHint="@color/grey" />
 
             <Button
-                android:id="@+id/buttonNext2"
+                android:id="@+id/buttonNext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
@@ -89,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:layout_weight="1"
-                android:background="@color/colorPrimary" />
+                android:background="@color/black" />
 
             <View
                 android:id="@+id/divider6"

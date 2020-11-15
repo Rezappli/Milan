@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.milan.inscription.NomUtilisateurActivity;
+import com.example.milan.inscription.InscriptionActivity;
+import com.example.milan.inscription.NomUtilisateurFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         buttonInscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(), NomUtilisateurActivity.class));
+                startActivity(new Intent(getBaseContext(), InscriptionActivity.class));
             }
         });
     }

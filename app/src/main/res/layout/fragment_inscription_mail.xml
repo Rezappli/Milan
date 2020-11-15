@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".inscription.TelephoneActivity">
+    tools:context=".inscription.MailFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="40dp"
                 android:gravity="center"
-                android:text="@string/ajout_tel"
+                android:text="@string/ajout_mail"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -49,16 +49,16 @@
                 android:layout_marginEnd="40dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/custom_input"
-                android:drawableEnd="@drawable/custom_icon_tel"
+                android:drawableEnd="@drawable/custom_icon_mail"
                 android:ems="10"
-                android:hint="@string/tel"
-                android:inputType="phone"
+                android:hint="@string/mail"
+                android:inputType="textEmailAddress"
                 android:padding="15dp"
                 android:textColor="#FFFFFF"
                 android:textColorHint="@color/grey" />
 
             <Button
-                android:id="@+id/buttonNext3"
+                android:id="@+id/buttonNext2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
@@ -96,7 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:layout_weight="1"
-                android:background="@color/colorPrimary" />
+                android:background="@color/black" />
 
             <View
                 android:id="@+id/divider7"
