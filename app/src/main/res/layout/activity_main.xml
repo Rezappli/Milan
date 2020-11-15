@@ -14,35 +14,18 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:layout_weight="0.9"
+            android:layout_weight="0.75"
+            android:padding="40dp"
             app:srcCompat="@drawable/logo" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.15"
+            android:layout_weight="0.25"
             android:orientation="vertical">
-
-            <View
-                android:id="@+id/divider3"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorPrimary" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center"
-                android:text="@string/connexion_title"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextTextEmailAddress"
@@ -51,14 +34,14 @@
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="40dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/custom_input"
                 android:drawableEnd="@drawable/custom_icon_person"
                 android:ems="10"
                 android:hint="@string/login"
                 android:inputType="textEmailAddress"
                 android:padding="15dp"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/black"
                 android:textColorHint="@color/black" />
 
             <EditText
@@ -66,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="40dp"
                 android:background="@drawable/custom_input"
                 android:drawableEnd="@drawable/custom_icon_cadenas"
@@ -76,12 +59,21 @@
                 android:padding="15dp"
                 android:textColorHint="@color/black" />
 
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/mdp_oublier"
+                android:textColor="@color/colorPrimary" />
+
             <Button
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="60dp"
                 android:layout_marginBottom="30dp"
                 android:text="@string/connexion_title"
@@ -106,7 +98,7 @@
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.4"
+                    android:layout_weight="0.3"
                     android:gravity="center"
                     android:text="@string/ou"
                     android:textColor="@color/colorSecondary"

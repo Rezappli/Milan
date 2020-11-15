@@ -26,19 +26,22 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="80dp"
             android:layout_weight="0.2"
-            android:gravity="center"
+            android:gravity="top"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="40dp"
+                android:fontFamily="sans-serif-light"
                 android:gravity="center"
                 android:text="@string/ajout_nomutilisateur"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="36sp" />
 
             <EditText
                 android:id="@+id/editTextTextEmailAddress"
@@ -54,7 +57,7 @@
                 android:hint="@string/nom_utilisateur"
                 android:inputType="text"
                 android:padding="15dp"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/black"
                 android:textColorHint="@color/grey" />
 
             <Button
@@ -62,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="80dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="80dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/custom_button"
