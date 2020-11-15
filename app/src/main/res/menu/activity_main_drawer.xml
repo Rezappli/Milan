@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_recherche"
+            android:icon="@drawable/ic_baseline_search_24"
+            android:title="@string/menu_recherche" />
+        <item
+            android:id="@+id/nav_messages"
+            android:icon="@drawable/menu_message"
+            android:title="@string/menu_messages" />
+        <item
+            android:id="@+id/nav_amis"
+            android:icon="@drawable/menu_amis"
+            android:title="@string/menu_amis" />
+
+        <item
+            android:id="@+id/nav_video"
+            android:icon="@drawable/menu_video"
+            android:title="@string/menu_video" />
+
+        <item
+            android:id="@+id/nav_social"
+            android:icon="@drawable/menu_social"
+            android:title="@string/menu_social" />
+
+        <item
+            android:id="@+id/nav_room"
+            android:icon="@drawable/menu_room"
+            android:title="@string/menu_room" />
+
+        <item
+            android:id="@+id/nav_evenements"
+            android:icon="@drawable/menu_event"
+            android:title="@string/menu_evenements" />
+    </group>
+</menu>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_recherche">
+
+    <fragment
+        android:id="@+id/nav_recherche"
+        android:name="com.example.milan.ui.home.RechercheFragment"
+        android:label="@string/menu_recherche"
+        tools:layout="@layout/fragment_recherche" />
+
+    <fragment
+        android:id="@+id/nav_messages"
+        android:name="com.example.milan.ui.messages.MessagesFragment"
+        android:label="@string/menu_messages"
+        tools:layout="@layout/fragment_messages" />
+
+    <fragment
+        android:id="@+id/nav_amis"
+        android:name="com.example.milan.ui.amis.FriendsRequestFragment"
+        android:label="@string/menu_amis"
+        tools:layout="@layout/fragment_amis" />
+
+    <fragment
+        android:id="@+id/nav_video"
+        android:name="com.example.milan.ui.videochat.VideoFragment"
+        android:label="@string/menu_video"
+        tools:layout="@layout/fragment_video" />
+
+    <fragment
+        android:id="@+id/nav_social"
+        android:name="com.example.milan.ui.socialchat.SocialFragment"
+        android:label="@string/menu_social"
+        tools:layout="@layout/fragment_social" />
+
+    <fragment
+        android:id="@+id/nav_room"
+        android:name="com.example.milan.ui.roomchat.RoomFragment"
+        android:label="@string/menu_room"
+        tools:layout="@layout/fragment_room" />
+
+    <fragment
+        android:id="@+id/nav_evenements"
+        android:name="com.example.milan.ui.evenements.EvenementsFragment"
+        android:label="@string/menu_evenements"
+        tools:layout="@layout/fragment_evenements" />
+</navigation>
