@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "562968913913",
+    "project_id": "milan-93785",
+    "storage_bucket": "milan-93785.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562968913913:android:079c5fc89b6b899c203f28",
+        "android_client_info": {
+          "package_name": "com.example.milan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562968913913-ddqondoeqblj5fk2vo3ah3guqud1e4cg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.milan",
+            "certificate_hash": "7ce624403ea531d8e0e265587bc05dacdd650697"
+          }
+        },
+        {
+          "client_id": "562968913913-ug4agcshl1bfmvmrgb8rm79ni5hldmgq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYdAI-TktaBnR5FVPY95xtcVBhtKAJrNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562968913913-ug4agcshl1bfmvmrgb8rm79ni5hldmgq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

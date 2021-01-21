@@ -28,7 +28,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/editTextTextEmailAddress"
+                android:id="@+id/editTextLoginMail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -45,7 +45,7 @@
                 android:textColorHint="@color/black" />
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/editTextLoginPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -69,7 +69,7 @@
                 android:textColor="@color/colorPrimary" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
