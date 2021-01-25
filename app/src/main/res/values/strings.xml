@@ -17,7 +17,7 @@
     <string name="ajout_tel"> Ajouter un numéro de téléphone </string>
     <string name="ajout_mdp"> Définir un mot de passe </string>
     <string name="mdp"> Mot de passe</string>
-    <string name="mdp_oublier"> Mot de passe oublié ?</string>
+    <string name="mdp_oublier"> Mot de passe oublié</string>
     <string name="confirm_mdp"> Confirmer mot de passe</string>
     <string name="mail"> Adresse e-mail</string>
     <string name="tel"> Téléphone </string>
@@ -39,4 +39,11 @@
 
     <string name="menu_room"> Room Chat </string>
     <string name="menu_evenements"> Evenements </string>
+    <string name="title_activity_main_message_fragment">MainActivity</string>
+    <string name="title_friends">Amis</string>
+    <string name="title_groups">Groupes</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="post">Posts</string>
+    <string name="like">Likes</string>
 </resources>

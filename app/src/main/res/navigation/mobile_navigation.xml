@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/nav_messages"
-        android:name="com.example.milan.ui.messages.MessagesFragment"
+        android:name="com.example.milan.ui.messages.MainMessageFragment"
         android:label="@string/menu_messages"
-        tools:layout="@layout/fragment_messages" />
+        tools:layout="@layout/activity_main_message_fragment" />
 
     <fragment
         android:id="@+id/nav_amis"
