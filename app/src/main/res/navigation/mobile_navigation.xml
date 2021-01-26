@@ -39,11 +39,25 @@
         android:id="@+id/nav_room"
         android:name="com.example.milan.ui.roomchat.RoomFragment"
         android:label="@string/menu_room"
-        tools:layout="@layout/fragment_room" />
+        tools:layout="@layout/fragment_room" >
+        <action
+            android:id="@+id/action_nav_room_to_nav_sub_room"
+            app:destination="@id/nav_sub_room" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_evenements"
         android:name="com.example.milan.ui.evenements.EvenementsFragment"
         android:label="@string/menu_evenements"
         tools:layout="@layout/fragment_evenements" />
+
+    <fragment
+        android:id="@+id/nav_sub_room"
+        android:name="com.example.milan.ui.roomchat.SubRoomFragment"
+        android:label="@string/room_car"
+        tools:layout="@layout/fragment_sub_room" >
+        <action
+            android:id="@+id/action_nav_sub_room_to_nav_room"
+            app:destination="@id/nav_room" />
+    </fragment>
 </navigation>

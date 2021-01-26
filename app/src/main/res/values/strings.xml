@@ -46,4 +46,22 @@
 
     <string name="post">Posts</string>
     <string name="like">Likes</string>
+
+    <string name="room_music"> Musique </string>
+    <string name="room_study"> Scolarité </string>
+    <string name="room_movie"> Film/Série </string>
+    <string name="room_car"> Auto/Moto </string>
+    <string name="room_shop"> Shopping </string>
+    <string name="room_it"> Informatique </string>
+    <string name="room_meet"> Rencontre </string>
+    <string name="room_work"> Travail </string>
+    <string name="room_food"> Nourriture </string>
+    <string name="room_dance"> Danse </string>
+    <string name="room_art"> Art </string>
+    <string name="room_trade"> Trade </string>
+    <string name="room_game"> Jeux vidéo </string>
+    <string name="room_travel"> Voyage </string>
+    <string name="room_concert"> Festival/Concert </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
