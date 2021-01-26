@@ -122,7 +122,7 @@ public class SubRoomFragment extends Fragment {
     }
 
     private void launchPosts(SubRoomCollections src) {
-        Query query = mStoreBase.collection(src.toString());
+        /*Query query = mStoreBase.collection(src.toString());
 
         FirestoreRecyclerOptions<Post> options = new FirestoreRecyclerOptions.Builder<Post>().setQuery(query, Post.class).build();
 
@@ -141,7 +141,7 @@ public class SubRoomFragment extends Fragment {
         };
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mRecyclerView.setAdapter(adapter);
-        adapter.startListening();
+        adapter.startListening();*/
     }
 
 

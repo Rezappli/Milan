@@ -10,6 +10,8 @@ import android.os.Bundle;
 import com.example.milan.R;
 import com.example.milan.objects.User;
 
+import java.util.UUID;
+
 public class InscriptionActivity extends AppCompatActivity {
 
     public static User registerUser;
@@ -19,5 +21,6 @@ public class InscriptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
         registerUser = new User();
+        registerUser.setUid(UUID.randomUUID().toString());
     }
 }

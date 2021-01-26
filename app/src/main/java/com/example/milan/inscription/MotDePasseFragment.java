@@ -96,6 +96,7 @@ public class MotDePasseFragment extends Fragment {
                 if(task.isSuccessful()) {
                     sendMailVerification();
                 }else {
+                    Log.w("Inscription", task.getException().getMessage());
                     Toast.makeText(getContext(), "Une erreur est survenue !", Toast.LENGTH_SHORT).show();
                 }
             }
