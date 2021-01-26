@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Milan.NoActionBar">
+        <activity android:name=".ui.roomchat.AddPostActivity"></activity>
         <activity android:name=".inscription.InscriptionActivity" />
         <activity
             android:name=".HomeActivity"

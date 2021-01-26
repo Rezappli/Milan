@@ -29,7 +29,6 @@ public class NomUtilisateurFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_inscription_nomutilisateur, container, false);
-
         editTextUserName = root.findViewById(R.id.editTextUserName);
 
         next = root.findViewById(R.id.buttonNext1);

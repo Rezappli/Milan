@@ -1,18 +1,32 @@
 package com.example.milan.objects;
 
+import com.example.milan.ui.roomchat.enums.SubRoom;
+import com.example.milan.ui.roomchat.enums.TypePost;
+
+import java.util.UUID;
+
 public class Post {
+    private String id;
     private String ownerName;
     private String message;
     private int nbLike;
     private int nbComment;
     private int nbShare;
+    private SubRoom room;
+    private TypePost type;
 
-    public Post(String ownerName, String message, int nbLike, int nbComment, int nbShare) {
+    public Post(){
+
+    }
+    public Post(String ownerName, String message, int nbLike, int nbComment, int nbShare, SubRoom room, TypePost type) {
+        this.id = UUID.randomUUID().toString();
         this.ownerName = ownerName;
         this.message = message;
         this.nbLike = nbLike;
         this.nbComment = nbComment;
         this.nbShare = nbShare;
+        this.room = room;
+        this.type = type;
     }
 
     public String getOwnerName() {
@@ -53,5 +67,29 @@ public class Post {
 
     public void setNbShare(int nbShare) {
         this.nbShare = nbShare;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public SubRoom getRoom() {
+        return room;
+    }
+
+    public void setRoom(SubRoom room) {
+        this.room = room;
+    }
+
+    public TypePost getType() {
+        return type;
+    }
+
+    public void setType(TypePost type) {
+        this.type = type;
     }
 }

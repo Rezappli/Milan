@@ -15,16 +15,12 @@ import android.widget.Toast;
 
 import com.example.milan.inscription.InscriptionActivity;
 import com.example.milan.inscription.NomUtilisateurFragment;
-import com.example.milan.objects.User;
-import com.example.milan.utils.Constants;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.regex.Pattern;
 
@@ -73,23 +69,7 @@ public class MainActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()) {
                                 if (mAuth.getCurrentUser().isEmailVerified()) {
-                                    mStoreBase.collection("users").whereEqualTo("mail", contentMail).get()
-                                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                                    if(task.isSuccessful() && task.getResult().size() == 1) {
-                                                        for(QueryDocumentSnapshot doc : task.getResult()) {
-                                                            try {
-                                                                Constants.currentUser = doc.toObject(User.class);
-                                                                startActivity(new Intent(getBaseContext(), HomeActivity.class));
-                                                            }catch(Exception e){
-                                                                Log.w("Connection", e.getMessage());
-                                                                Toast.makeText(MainActivity.this, "Une erreur est survenue !", Toast.LENGTH_SHORT).show();
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            });
+                                    startActivity(new Intent(getBaseContext(), HomeActivity.class));
                                 } else {
                                     final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                                     builder.setMessage("Votre adresse mail n'a pas été vérifiée")

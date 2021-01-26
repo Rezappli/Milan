@@ -40,8 +40,8 @@ public class HomeActivity extends AppCompatActivity {
         View headerView = navigationView.getHeaderView(0);
         navUsernameTextView = headerView.findViewById(R.id.nav_header_username_textview);
         navMailTextView = headerView.findViewById(R.id.nav_header_mail_textview);
-        navUsernameTextView.setText(Constants.currentUser.getUsername());
-        navMailTextView.setText(Constants.currentUser.getMail());
+//        navUsernameTextView.setText(Constants.currentUser.getUsername());
+       // navMailTextView.setText(Constants.currentUser.getMail());
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
