@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="0.1"
-            app:srcCompat="@drawable/menu_post" />
+            android:src="@drawable/menu_post" />
 
     </LinearLayout>
 
@@ -86,21 +86,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/star_post" />
+            android:src="@drawable/star_post" />
 
         <ImageView
             android:id="@+id/imageView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/comment_post" />
+            android:src="@drawable/comment_post" />
 
         <ImageView
             android:id="@+id/imageView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/share_post" />
+            android:src="@drawable/share_post" />
     </LinearLayout>
 
     <LinearLayout

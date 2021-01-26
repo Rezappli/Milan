@@ -3,17 +3,29 @@ package com.example.milan.ui.roomchat;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.transition.Scene;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.milan.R;
+import com.example.milan.objects.Post;
+import com.example.milan.ui.roomchat.enums.SubRoom;
+import com.example.milan.ui.roomchat.enums.SubRoomCollections;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.Query;
+
+import static com.example.milan.utils.Constants.mStoreBase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,6 +43,9 @@ public class SubRoomFragment extends Fragment {
     private Scene scene1;
     private Scene scene2;
     private Scene currentScene;
+    private RecyclerView mRecyclerView;
+    private FirestoreRecyclerAdapter adapter;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -76,19 +91,19 @@ public class SubRoomFragment extends Fragment {
         ImageView addPostImg = root.findViewById(R.id.add_post_img);
         TextView testText = root.findViewById(R.id.textViewTest);
         switch (currentRoom){
-            case IT:testText.setText("it");
+            case IT:launchPosts(SubRoomCollections.room_it);
                 break;
-            case CAR:testText.setText("car");
+            case CAR:launchPosts(SubRoomCollections.room_car);
                 break;
-            case MEET:testText.setText("meet");
+            case MEET:launchPosts(SubRoomCollections.room_meet);
                 break;
-            case MOVIE:testText.setText("movie");
+            case MOVIE:launchPosts(SubRoomCollections.room_movie);
                 break;
-            case GAME:testText.setText("game");
+            case GAME:launchPosts(SubRoomCollections.room_game);
                 break;
-            case TRAVEL:testText.setText("travel");
+            case TRAVEL:launchPosts(SubRoomCollections.room_travel);
                 break;
-            case FOOD:testText.setText("food");
+            case FOOD:launchPosts(SubRoomCollections.room_food);
                 break;
         }
         /*scene1 = Scene.getSceneForLayout(root.findViewById(R.id.scene1_add_post), R.layout.fragment_sub_room,getContext());
@@ -104,5 +119,43 @@ public class SubRoomFragment extends Fragment {
             }
         });*/
         return root;
+    }
+
+    private void launchPosts(SubRoomCollections src) {
+        Query query = mStoreBase.collection(src.toString());
+
+        FirestoreRecyclerOptions<Post> options = new FirestoreRecyclerOptions.Builder<Post>().setQuery(query, Post.class).build();
+
+        adapter = new FirestoreRecyclerAdapter<Post, ViewHolder>(options) {
+            @NonNull
+            @Override
+            public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_post, parent, false);
+                return new ViewHolder(view);
+            }
+
+            @Override
+            protected void onBindViewHolder(@NonNull final ViewHolder userViewHolder, int i, @NonNull final Post p) {
+
+            }
+        };
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mRecyclerView.setAdapter(adapter);
+        adapter.startListening();
+    }
+
+
+    private class ViewHolder extends RecyclerView.ViewHolder {
+
+    private TextView nomGroup;
+    private LinearLayout layoutGroup;
+    private ImageView imageGroup;
+    private ImageView button;
+
+    public ViewHolder(@NonNull View itemView) {
+        super(itemView);
+
+
+    }
     }
 }
