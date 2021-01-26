@@ -147,10 +147,13 @@ public class SubRoomFragment extends Fragment {
 
     private class ViewHolder extends RecyclerView.ViewHolder {
 
-    private TextView nomGroup;
-    private LinearLayout layoutGroup;
-    private ImageView imageGroup;
-    private ImageView button;
+    private TextView name;
+    private TextView message;
+    private ImageView image;
+    private ImageView like;
+    private ImageView comment;
+    private ImageView share;
+    private ImageView postImage;
 
     public ViewHolder(@NonNull View itemView) {
         super(itemView);
