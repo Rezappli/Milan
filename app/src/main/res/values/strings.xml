@@ -69,4 +69,5 @@
     <string name="hint_post"> Dite ce que vous avez sur le coeur </string>
     <string name="room"> Room </string>
     <string name="photo"> Photos </string>
+    <string name="title_dialog_room"> Choisis ta room </string>
 </resources>

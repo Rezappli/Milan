@@ -33,61 +33,18 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import static com.example.milan.utils.Constants.USER_ID;
 import static com.example.milan.utils.Constants.mStoreBase;
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SubRoomFragment#newInstance} factory method to
- * create an instance of this fragment.
- *
- */
 public class SubRoomFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    public static SubRoom currentRoom;
     private Scene scene1;
     private Scene scene2;
     private Scene currentScene;
     private RecyclerView mRecyclerView;
     private FirestoreRecyclerAdapter adapter;
     private ImageView addPostImg;
-
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SubRoomFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SubRoomFragment newInstance(String param1, String param2) {
-        SubRoomFragment fragment = new SubRoomFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    public static SubRoom currentRoom;
 
     public SubRoomFragment() {
         // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -102,10 +59,12 @@ public class SubRoomFragment extends Fragment {
         addPostImg.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               AddPostActivity.currentRoom = currentRoom;
                startActivity(new Intent(getContext(),AddPostActivity.class));
            }
        });
 
+        currentRoom = SubRoom.IT;
         // Found the room choise by the user
         switch (currentRoom){
             case IT:launchPosts(SubRoom.IT);
