@@ -18,13 +18,13 @@ public class Post {
     public Post(){
 
     }
-    public Post(String ownerName, String message, int nbLike, int nbComment, int nbShare, SubRoom room, TypePost type) {
+    public Post(String ownerName, String message, SubRoom room, TypePost type) {
         this.id = UUID.randomUUID().toString();
         this.ownerName = ownerName;
         this.message = message;
-        this.nbLike = nbLike;
-        this.nbComment = nbComment;
-        this.nbShare = nbShare;
+        this.nbLike = 0;
+        this.nbComment = 0;
+        this.nbShare = 0;
         this.room = room;
         this.type = type;
     }

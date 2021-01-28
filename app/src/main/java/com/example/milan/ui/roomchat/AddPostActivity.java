@@ -3,36 +3,40 @@ package com.example.milan.ui.roomchat;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.DialogFragment;
 
 import android.annotation.SuppressLint;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.transition.Explode;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.milan.R;
-import com.example.milan.ui.roomchat.dialog.ChangeRoomPostActivity;
+import com.example.milan.bdd.BddPost;
+import com.example.milan.objects.Post;
 import com.example.milan.ui.roomchat.enums.SubRoom;
+import com.example.milan.ui.roomchat.enums.TypePost;
+import com.google.android.material.textfield.TextInputEditText;
+
+import static com.example.milan.utils.Constants.currentUser;
 
 public class AddPostActivity extends AppCompatActivity {
 
     private CardView changeRoom, addImage;
-    private ImageView imagePost;
+    private ImageView imagePost, addPost;
     static final int RESULT_LOAD_IMG = 1;
     private boolean hasSelectedImage = false;
     private Uri imageUri = null;
     private TextView textViewCurrentRoom;
+    private TextInputEditText messagePost;
     public static SubRoom currentRoom;
+    private boolean hasPhoto;
+    private boolean hasVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,8 @@ public class AddPostActivity extends AppCompatActivity {
         changeRoom = findViewById(R.id.changeRoomPost);
         addImage = findViewById(R.id.addImagePost);
         imagePost = findViewById(R.id.imagePost);
+        addPost = findViewById(R.id.addPost);
+        messagePost = findViewById(R.id.messagePost);
         textViewCurrentRoom = findViewById(R.id.textViewRoomPost);
         initialiseCurrentRoom();
         addImage.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +69,28 @@ public class AddPostActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_up,R.anim.slide_bottom);
             }
         });
+
+        addPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uploadPost();
+                onBackPressed();
+            }
+        });
+    }
+
+    private void uploadPost() {
+        TypePost tp;
+        if(hasPhoto){
+            tp = TypePost.PHOTO;
+        }else if(hasVideo){
+            tp = TypePost.VIDEO;
+        }else{
+            tp = TypePost.TEXT;
+        }
+        Post post = new Post(currentUser.getUsername(),messagePost.getText().toString(),currentRoom,tp);
+        BddPost bdd = new BddPost();
+        bdd.uploadPost(post);
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

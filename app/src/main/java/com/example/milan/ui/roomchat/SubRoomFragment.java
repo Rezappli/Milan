@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.transition.Scene;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,11 +27,13 @@ import com.example.milan.bdd.BddPost;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import static com.example.milan.utils.Constants.USER;
 import static com.example.milan.utils.Constants.USER_ID;
 import static com.example.milan.utils.Constants.mStoreBase;
 public class SubRoomFragment extends Fragment {
@@ -64,7 +67,6 @@ public class SubRoomFragment extends Fragment {
            }
        });
 
-        currentRoom = SubRoom.IT;
         // Found the room choise by the user
         switch (currentRoom){
             case IT:launchPosts(SubRoom.IT);
@@ -127,12 +129,13 @@ public class SubRoomFragment extends Fragment {
                 userViewHolder.like.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                       /* mStoreBase.collection("users").document(USER_ID).collection("likes")
+                        Log.w("USER_ID", "User id : " + USER_ID);
+                        mStoreBase.collection("users").document(USER_ID).collection("likes")
                                 .document(p.getId()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                 if(task.isSuccessful()){
-                                    if(!task.getResult().exists()){
+                                    if(!task.getResult().exists()) {
                                         userViewHolder.like.setImageDrawable(getResources().getDrawable(R.drawable.star_post_focused));
                                         BddPost post = new BddPost();
                                         post.addLike(p);
@@ -144,8 +147,6 @@ public class SubRoomFragment extends Fragment {
                                 }
                             }
                         });
-                        */
-
                     }
                 });
             }

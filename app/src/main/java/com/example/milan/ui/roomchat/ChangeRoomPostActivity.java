@@ -1,4 +1,4 @@
-package com.example.milan.ui.roomchat.dialog;
+package com.example.milan.ui.roomchat;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

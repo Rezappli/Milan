@@ -8,45 +8,45 @@ public class BddPost {
 
     public void addLike(Post post) {
         post.setNbLike(post.getNbLike()+1);
-        updatePost(post);
+        uploadPost(post);
         updateLikes(post);
     }
 
     public void addComment(Post post) {
         post.setNbComment(post.getNbComment()+1);
-        updatePost(post);
+        uploadPost(post);
     }
 
     public void addShare(Post post) {
         post.setNbShare(post.getNbShare()+1);
-        updatePost(post);
+        uploadPost(post);
     }
 
     public void removeLike(Post post) {
         post.setNbLike(post.getNbLike()-1);
-        updatePost(post);
+        uploadPost(post);
     }
 
     public void removeComment(Post post) {
         post.setNbComment(post.getNbComment()-1);
-        updatePost(post);
+        uploadPost(post);
     }
 
     public void removeShare(Post post) {
         post.setNbShare(post.getNbShare()-1);
-        updatePost(post);
+        uploadPost(post);
     }
 
     public void setMessage(Post post, String message) {
         post.setMessage(message);
-        updatePost(post);
+        uploadPost(post);
     }
 
     public void setImage(Post post) {
 
     }
 
-    public void updatePost(Post post) {
+    public void uploadPost(Post post) {
         mStoreBase.collection("room").document(post.getId()).set(post);
     }
 

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Milan.NoActionBar">
         <activity android:name=".ui.roomchat.AddPostActivity"></activity>
-        <activity android:name=".ui.roomchat.dialog.ChangeRoomPostActivity"></activity>
+        <activity android:name=".ui.roomchat.ChangeRoomPostActivity"></activity>
         <activity android:name=".inscription.InscriptionActivity" />
         <activity
             android:name=".HomeActivity"
