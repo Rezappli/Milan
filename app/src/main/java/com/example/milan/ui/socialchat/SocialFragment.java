@@ -23,7 +23,7 @@ public class SocialFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_actualite, container, false);
+        View root = inflater.inflate(R.layout.fragment_sub_social, container, false);
         CardView room_it = root.findViewById(R.id.room_it);
         CardView room_car = root.findViewById(R.id.room_car);
         CardView room_food = root.findViewById(R.id.room_food);
@@ -75,6 +75,6 @@ public class SocialFragment extends Fragment {
 
     public void goSubRoom(SubRoom sb){
         SubActualiteFragment.currentRoom = sb;
-        navController.navigate(R.id.);
+        navController.navigate(R.id.action_nav_social_to_nav_sub_social);
     }
 }

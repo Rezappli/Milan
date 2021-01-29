@@ -22,6 +22,16 @@
         tools:layout="@layout/fragment_recherche" />
 
     <fragment
+        android:id="@+id/nav_sub_social"
+        android:name="com.example.milan.ui.socialchat.SubSocialFragment"
+        android:label="@string/menu_social"
+        tools:layout="@layout/fragment_sub_social" >
+        <action
+            android:id="@+id/action_nav_sub_social_to_nav_social"
+            app:destination="@id/nav_social" />
+    </fragment>
+
+    <fragment
         android:id="@+id/nav_messages"
         android:name="com.example.milan.ui.messages.MainMessageFragment"
         android:label="@string/menu_messages"
@@ -43,7 +53,11 @@
         android:id="@+id/nav_social"
         android:name="com.example.milan.ui.socialchat.SocialFragment"
         android:label="@string/menu_social"
-        tools:layout="@layout/fragment_social" />
+        tools:layout="@layout/fragment_social" >
+        <action
+            android:id="@+id/action_nav_social_to_nav_sub_social"
+            app:destination="@id/nav_sub_social" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_room"
