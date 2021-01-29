@@ -5,7 +5,7 @@
     android:id="@+id/scene1_add_post"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.roomchat.SubRoomFragment">
+    tools:context=".ui.actualite.SubActualiteFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPost"

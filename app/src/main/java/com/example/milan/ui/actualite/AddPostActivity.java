@@ -1,4 +1,4 @@
-package com.example.milan.ui.roomchat;
+package com.example.milan.ui.actualite;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +19,8 @@ import com.bumptech.glide.Glide;
 import com.example.milan.R;
 import com.example.milan.bdd.BddPost;
 import com.example.milan.objects.Post;
-import com.example.milan.ui.roomchat.enums.SubRoom;
-import com.example.milan.ui.roomchat.enums.TypePost;
+import com.example.milan.ui.actualite.enums.SubRoom;
+import com.example.milan.ui.actualite.enums.TypePost;
 import com.google.android.material.textfield.TextInputEditText;
 
 import static com.example.milan.utils.Constants.currentUser;

@@ -1,7 +1,7 @@
 package com.example.milan.objects;
 
-import com.example.milan.ui.roomchat.enums.SubRoom;
-import com.example.milan.ui.roomchat.enums.TypePost;
+import com.example.milan.ui.actualite.enums.SubRoom;
+import com.example.milan.ui.actualite.enums.TypePost;
 
 import java.util.UUID;
 
@@ -28,6 +28,7 @@ public class Post {
         this.room = room;
         this.type = type;
     }
+
 
     public String getOwnerName() {
         return ownerName;

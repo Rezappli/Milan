@@ -9,7 +9,4 @@ public class Constants {
     public static User currentUser;
     public static FirebaseFirestore mStoreBase = FirebaseFirestore.getInstance();
     public static FirebaseAuth mAuth = FirebaseAuth.getInstance();
-    public static String USER_ID;
-    public static DocumentReference USER_REFERENCE;
-    public static User USER;
 }

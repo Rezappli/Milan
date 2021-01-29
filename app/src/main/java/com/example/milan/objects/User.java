@@ -7,6 +7,8 @@ public class User {
     private String username;
     private String mail;
     private String phone;
+    private int nbLike;
+    private int nbPost;
 
     public User() {}
 
@@ -15,6 +17,8 @@ public class User {
         this.username = username;
         this.mail = mail;
         this.phone = phone;
+        this.nbLike = 0;
+        this.nbPost = 0;
     }
 
     public String getUid() {
@@ -48,4 +52,21 @@ public class User {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    public int getNbLike() {
+        return nbLike;
+    }
+
+    public void setNbLike(int nbLike) {
+        this.nbLike = nbLike;
+    }
+
+    public int getNbPost() {
+        return nbPost;
+    }
+
+    public void setNbPost(int nbPost) {
+        this.nbPost = nbPost;
+    }
 }
+

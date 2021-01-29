@@ -2,13 +2,13 @@ package com.example.milan.bdd;
 
 import com.example.milan.objects.Post;
 
+import static com.example.milan.utils.Constants.currentUser;
 import static com.example.milan.utils.Constants.mStoreBase;
 
 public class BddPost {
 
     public void addLike(Post post) {
         post.setNbLike(post.getNbLike()+1);
-        uploadPost(post);
         updateLikes(post);
     }
 
@@ -51,7 +51,7 @@ public class BddPost {
     }
 
     public void updateLikes(Post post){
-        //mStoreBase.collection("users").document(USER_ID).collection("likes").document(post.getId()).set(post);
+        mStoreBase.collection("users").document(currentUser.getUid()).collection("likes").document(post.getId()).set(post);
     }
 
 

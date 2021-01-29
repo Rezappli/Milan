@@ -1,4 +1,4 @@
-package com.example.milan.ui.roomchat;
+package com.example.milan.ui.actualite;
 
 import android.content.Intent;
 import android.os.Build;
@@ -11,32 +11,28 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.transition.Scene;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.milan.R;
 import com.example.milan.objects.Post;
-import com.example.milan.ui.roomchat.enums.SubRoom;
-import com.example.milan.ui.roomchat.enums.TypePost;
+import com.example.milan.ui.actualite.enums.SubRoom;
+import com.example.milan.ui.actualite.enums.TypePost;
 import com.example.milan.bdd.BddPost;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
 
-import static com.example.milan.utils.Constants.USER;
-import static com.example.milan.utils.Constants.USER_ID;
+import static com.example.milan.utils.Constants.currentUser;
 import static com.example.milan.utils.Constants.mStoreBase;
-public class SubRoomFragment extends Fragment {
+
+public class SubActualiteFragment extends Fragment {
 
     private Scene scene1;
     private Scene scene2;
@@ -46,7 +42,7 @@ public class SubRoomFragment extends Fragment {
     private ImageView addPostImg;
     public static SubRoom currentRoom;
 
-    public SubRoomFragment() {
+    public SubActualiteFragment() {
         // Required empty public constructor
     }
 
@@ -55,14 +51,14 @@ public class SubRoomFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_sub_room, container, false);
+        View root = inflater.inflate(R.layout.fragment_sub_actualite, container, false);
         addPostImg = root.findViewById(R.id.add_post_img);
         mRecyclerView = root.findViewById(R.id.recyclerPost);
         // Click on add post
         addPostImg.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               AddPostActivity.currentRoom = currentRoom;
+               currentRoom = currentRoom;
                startActivity(new Intent(getContext(),AddPostActivity.class));
            }
        });
@@ -129,8 +125,7 @@ public class SubRoomFragment extends Fragment {
                 userViewHolder.like.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.w("USER_ID", "User id : " + USER_ID);
-                        mStoreBase.collection("users").document(USER_ID).collection("likes")
+                        mStoreBase.collection("users").document(currentUser.getUid()).collection("likes")
                                 .document(p.getId()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<DocumentSnapshot> task) {

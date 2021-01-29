@@ -1,4 +1,4 @@
-package com.example.milan.ui.roomchat;
+package com.example.milan.ui.actualite;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,16 +12,16 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.example.milan.R;
-import com.example.milan.ui.roomchat.enums.SubRoom;
+import com.example.milan.ui.actualite.enums.SubRoom;
 
-public class RoomFragment extends Fragment {
+public class ActualiteFragment extends Fragment {
 
     NavController navController;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_room, container, false);
+        View root = inflater.inflate(R.layout.fragment_actualite, container, false);
         CardView room_it = root.findViewById(R.id.room_it);
         CardView room_car = root.findViewById(R.id.room_car);
         CardView room_food = root.findViewById(R.id.room_food);
@@ -72,7 +72,7 @@ public class RoomFragment extends Fragment {
     }
 
     public void goSubRoom(SubRoom sb){
-        SubRoomFragment.currentRoom = sb;
-        navController.navigate(R.id.action_nav_room_to_nav_sub_room);
+        SubActualiteFragment.currentRoom = sb;
+        navController.navigate(R.id.action_nav_actualite_to_nav_sub_room);
     }
 }

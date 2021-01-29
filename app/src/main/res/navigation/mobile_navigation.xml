@@ -3,7 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_recherche">
+    app:startDestination="@+id/nav_actualite">
+
+    <fragment
+        android:id="@+id/nav_actualite"
+        android:name="com.example.milan.ui.actualite.ActualiteFragment"
+        android:label="@string/menu_actualite"
+        tools:layout="@layout/fragment_actualite" >
+        <action
+            android:id="@+id/action_nav_actualite_to_nav_sub_room"
+            app:destination="@id/nav_sub_actualite" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_recherche"
@@ -37,13 +47,9 @@
 
     <fragment
         android:id="@+id/nav_room"
-        android:name="com.example.milan.ui.roomchat.RoomFragment"
+        android:name="com.example.milan.ui.roomchat.RoomChatFragment"
         android:label="@string/menu_room"
-        tools:layout="@layout/fragment_room" >
-        <action
-            android:id="@+id/action_nav_room_to_nav_sub_room"
-            app:destination="@id/nav_sub_room" />
-    </fragment>
+        tools:layout="@layout/fragment_room_chat" />
 
     <fragment
         android:id="@+id/nav_evenements"
@@ -52,12 +58,12 @@
         tools:layout="@layout/fragment_evenements" />
 
     <fragment
-        android:id="@+id/nav_sub_room"
-        android:name="com.example.milan.ui.roomchat.SubRoomFragment"
+        android:id="@+id/nav_sub_actualite"
+        android:name="com.example.milan.ui.actualite.SubActualiteFragment"
         android:label="@string/room_car"
-        tools:layout="@layout/fragment_sub_room" >
+        tools:layout="@layout/fragment_sub_actualite" >
         <action
-            android:id="@+id/action_nav_sub_room_to_nav_room"
-            app:destination="@id/nav_room" />
+            android:id="@+id/action_nav_sub_room_to_nav_actualite"
+            app:destination="@id/nav_actualite" />
     </fragment>
 </navigation>
